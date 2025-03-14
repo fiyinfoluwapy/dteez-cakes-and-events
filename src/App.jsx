@@ -1,12 +1,38 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
+import Navbar from "./components/Navbar";
+import Header from "./components/header";
+import About from "./components/about";
+import MeetOurBrands from "./components/brands";
+import Footer from "./components/footer";
+import CakeGallery from "./components/CakeGallery";
+import FoodGallery from "./components/FoodGallery";
+import GrillGallery from "./components/GrillsGallery";
 import "./index.css"; 
 import './output.css';
 
 
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 text-white !important">
-      <h1 className="text-4xl font-bold">Tailwind + Vite + React </h1>
-    </div>
+    <BrowserRouter> {/* Wrap the entire App in BrowserRouter */}
+      <Navbar />
+      <main className="mt-16 p-4"> {/* Content below navbar */}
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header />
+              <About />
+              <MeetOurBrands />
+            </>
+          } />
+          <Route path="/cake-gallery" element={<CakeGallery />} />
+          <Route path="/food-gallery" element={<FoodGallery/>} />
+          <Route path="/grills-gallery" element={<GrillGallery/>} />
+
+
+        </Routes>
+        <Footer />
+      </main>
+    </BrowserRouter>
   );
 }
 
