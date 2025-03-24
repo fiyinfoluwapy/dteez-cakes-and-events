@@ -1,3 +1,4 @@
+import './index.css'; 
 import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
 import Navbar from "./components/Navbar";
 import Header from "./components/header";
@@ -7,7 +8,7 @@ import Footer from "./components/footer";
 import CakeGallery from "./components/CakeGallery";
 import FoodGallery from "./components/FoodGallery";
 import GrillGallery from "./components/GrillsGallery";
-import "./index.css"; 
+
 import './output.css';
 
 
